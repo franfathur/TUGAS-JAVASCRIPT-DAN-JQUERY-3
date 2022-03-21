@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Soal 5 | Ghufran Fathur</title>
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<style type="text/css">
+
+body {
+  background: conic-gradient(
+		from 45deg,
+		#020681 0,
+		#020681 90deg,
+		#000337 90deg,
+		#000337 180deg,
+		#0818ff 180deg,
+		#0818ff 270deg,
+		#0f9bfe 270deg,
+		#0f9bfe 360deg
+	);
+	background-size: 1em 1em;
+	height: 100vh;
+  font-size: 12px;
+}
+
+#kotak {
+padding: 220px;
+width: 600px;
+margin: auto;
+
+}
+#form {
+  padding: 20px;
+  background: #3e3e3e;
+  border-radius: 15px;
+  color: #ffffff;
+}
+
+#form p{
+color: #ffffff;
+}
+
+.app-title {
+  text-transform: uppercase;
+  font-size: 26px;
+  padding: 10px;
+}
+
+</style>
+</head>
+<body>
+<div id="kotak">
+
+<div id="form">
+<h1>Masukkan Data </h1>
+<form method="post" onsubmit="return Validasi();">
+<table align="center">
+<tr>
+<td align="left"><p><b>Email</b></p></td>
+<td><p><b>:</b></p></td>
+<td align="left"><input type="text" size="30" id="email"></td>
+
+</tr>
+
+</tr>
+<tr>
+<td align="left"><p><b>No. Telepon</b></p></td>
+<td><p><b>:</b></p></td>
+<td align="left"><input type="text" id="notelepon"></td>
+
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td><input type="submit" name="submit" value="Kirim"></td>
+
+</tr>
+</form>
+</table>
+
+</div>
+</div>
+
+<script type="text/javascript">
+function Validasi(){
+
+var angka = "0123456789";
+var x = 0;
+var email=document.getElementById('email').value;
+var notelepon=document.getElementById('notelepon').value;
+if (email=="" || notelepon ==""){
+alert("Form Ada Yang Kosong");
+
+}
+
+if ((email.indexOf('@',0)==-1) || (email.indexOf('.',0)==-1)){	
+alert("Penulisan Email Kurang Tepat");
+
+}
+
+
+if (notelepon.length!=12) {
+alert("Panjang Nomor Telepon Harus 12");
+return false;
+}
+
+for (var i=0; i < notelepon.length; i++) {
+
+digitb = "" + notelepon.substring(i, i+1);
+if (angka.indexOf(digita) == "-1") {
+window.alert("Karakter pada Kode Pos yang dimasukkan salah (harus angka semua)");
+return false;
+}
+
+if (angka.indexOf(digitb) == "-1") {
+window.alert("Karakter pada No Telepon yang dimasukkan salah (harus angka semua)");
+return false;
+}
+
+}
+return true;
+
+}
+
+</script>
+
+</body>
+
+</html>
